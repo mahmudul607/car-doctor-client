@@ -1,0 +1,83 @@
+[
+    {
+      "id": "1",
+      "title": "Roof Rack",
+      "price": "$149.99",
+      "ratting": 4.5,
+      "details": "Heavy-duty roof rack for additional cargo space. Easy to install and compatible with most car models.",
+      "img": "https://i.ibb.co/dgQyzYZ/Roof-Rack.webp"
+    },
+    {
+      "id": "2",
+      "title": "Dash Cam",
+      "price": "$89.95",
+      "ratting": 4.2,
+      "details": "1080p HD dash cam with loop recording and G-sensor. Enhance your driving safety with this compact device.",
+      "img": "https://i.ibb.co/XbkjzqK/Dash-Cam.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Seat Covers",
+      "price": "$59.99",
+      "ratting": 4.0,
+      "details": "Premium car seat covers made from high-quality materials. Protect and enhance the interior of your vehicle.",
+      "img": "https://i.ibb.co/2cFcbBF/Seat-Covers.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Bluetooth Car Kit",
+      "price": "$39.99",
+      "ratting": 4.3,
+      "details": "Upgrade your car stereo with a Bluetooth car kit. Stream music and answer calls wirelessly.",
+      "img": "https://i.ibb.co/Gx9C5cY/Bluetooth-Car-Kit.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Car Air Freshener",
+      "price": "$9.99",
+      "ratting": 4.8,
+      "details": "Long-lasting car air freshener with a refreshing scent. Keep your car interior smelling clean and pleasant.",
+      "img": "https://i.ibb.co/H2dftK0/Car-Air-Freshener.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Car Organizer",
+      "price": "$19.99",
+      "ratting": 4.1,
+      "details": "Multi-pocket car organizer for efficient storage. Keep your essentials within reach and maintain a tidy car interior.",
+      "img": "https://i.ibb.co/tKCbdk8/Car-Organizer.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Tire Pressure Gauge",
+      "price": "$12.95",
+      "ratting": 4.4,
+      "details": "Digital tire pressure gauge for accurate readings. Ensure your tires are properly inflated for better fuel efficiency.",
+      "img": "https://i.ibb.co/m8Vhz12/Tire-Pressure-Gauge.jpg"
+    },
+    {
+      "id": "8",
+      "title": "Car Phone Mount",
+      "price": "$14.99",
+      "ratting": 4.6,
+      "details": "Adjustable car phone mount for safe and convenient navigation. Compatible with various smartphone sizes.",
+      "img": "https://i.ibb.co/z7v596f/Car-Phone-Mount.jpg"
+    },
+    {
+      "id": "9",
+      "title": "Jump Starter Kit",
+      "price": "$79.99",
+      "ratting": 4.7,
+      "details": "Portable jump starter kit for emergency situations. Compact design with multiple functionalities.",
+      "img": "https://i.ibb.co/9H76Kc2/Jump-Starter-Kit.jpg"
+    },
+    {
+      "id": "10",
+      "title": "Car Wax Kit",
+      "price": "$29.99",
+      "ratting": 4.2,
+      "details": "Complete car waxing kit for a glossy finish. Easy application and long-lasting protection for your vehicle.",
+      "img": "https://i.ibb.co/m0tXbFT/Car-Wax-Kit.jpg"
+    }
+  ]
+  
