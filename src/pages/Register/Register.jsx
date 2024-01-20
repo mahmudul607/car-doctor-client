@@ -1,13 +1,29 @@
-import img from "../../assets/images/"
+import { useContext } from "react";
+import img from "../../assets/images/login/login.svg"
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Register = () => {
-    const handleLogin = (e) => {
+    const {createUser} = useContext(AuthContext);
+
+    const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
         const user = { email, password };
         console.log(user);
+
+        createUser(email, password)
+        .then((result) => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(err => {
+            console.error(err.message);
+        })
+
+        
+        
 
 
     };
@@ -19,8 +35,8 @@ const Register = () => {
                     <img src={img} alt="" />
                 </div>
                 <div className="card shrink-0 w-full p-4 max-w-sm shadow-2xl bg-base-100">
-                    <h1 className="text-3xl text-center font-bold">Login now!</h1>
-                    <form className="card-body" onSubmit={handleLogin}>
+                    <h1 className="text-3xl text-center font-bold">Register now!</h1>
+                    <form className="card-body" onSubmit={handleRegister}>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -32,12 +48,10 @@ const Register = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" placeholder="password" name="password" className="input input-bordered" required />
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
+                            
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-primary">SignUp</button>
                         </div>
                     </form>
                 </div>

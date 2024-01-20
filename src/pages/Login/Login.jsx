@@ -1,6 +1,9 @@
 
+import { useContext } from "react";
 import img from "../../assets/images/login/login.svg"
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Login = () => {
+    const {loginUser} = useContext(AuthContext)
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -8,6 +11,15 @@ const Login = () => {
         const password = form.password.value;
         const user = {email, password};
         console.log(user);
+        loginUser(email, password)
+        .then(user =>{
+            console.log(user);
+            alert('logged in successfully');
+        })
+        .catch(err =>{
+            console.log(err);
+            console.log(err.message);
+        })
 
 
     };
