@@ -5,6 +5,9 @@ import { useEffect } from "react";
 import ServiceCard from "../ServiceCard/ServiceCard";
 import QuickSolution from "../QuickSolution/QuickSolution";
 import Products from "../Products/Products";
+import Team from "../Team/Team";
+import OurFeatures from "../OurFeatures/OurFeatures";
+import Testimonial from "../Testimonial/Testimonial";
 
 
 const Home = () => {
@@ -41,7 +44,9 @@ const Home = () => {
             {/* Products section */}
            
             <Products></Products>
-     
+            <Team></Team>
+            <OurFeatures></OurFeatures>
+            <Testimonial></Testimonial>
         </div>
     );
 };
