@@ -1,10 +1,11 @@
 
 import PropTypes from 'prop-types';
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
 
-    const { title, img, price } = service;
+    const { _id, title, img, price } = service;
     return (
         <div className="card w-full bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
@@ -14,7 +15,7 @@ const ServiceCard = ({ service }) => {
                 <h2 className="card-title">{title}</h2>
                 <p>${price}</p>
                 <div className="card-actions ">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <Link to={`/checkout/${_id}`} className="btn btn-primary">Book Now</Link>
                     <FaArrowRight className='text-2xl absolute right-4 text-[#FF3811]' />
                 </div>
             </div>
