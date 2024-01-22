@@ -2,6 +2,7 @@
 import { useContext } from "react";
 import img from "../../assets/images/login/login.svg"
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
 const Login = () => {
     const {loginUser} = useContext(AuthContext)
     const handleLogin = (e) => {
@@ -50,6 +51,7 @@ const Login = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
+                            <span className="text-sm">Are You New in Here? Please <Link to={'/register'} className="font-bold text-green-600">Sign Up</Link></span>
                         </div>
                     </form>
                 </div>

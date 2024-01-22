@@ -31,14 +31,15 @@ const AuthProvider = ({ children }) => {
         }
     },[])
 
-    const handleLogout = () => {
+    const logOut = () => {
+        setLoader(true);
         return signOut(auth)
     }
     const authInfo = {
 
         createUser,
         loginUser,
-        handleLogout,
+        logOut,
         loader,
         user
     }

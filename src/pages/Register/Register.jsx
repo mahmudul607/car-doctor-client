@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import img from "../../assets/images/login/login.svg"
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useNavigate } from "react-router-dom";
+
+
 
 const Register = () => {
     const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -16,13 +20,20 @@ const Register = () => {
         createUser(email, password)
         .then((result) => {
             const user = result.user;
+          alert('User created successfully');
+        
+            navigate("/login")
+          
+          
             console.log(user);
+            
         })
         .catch(err => {
             console.error(err.message);
         })
 
         
+       
         
 
 
