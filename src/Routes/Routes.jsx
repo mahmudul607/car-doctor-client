@@ -8,6 +8,8 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import BookService from "../pages/BookService/BookService";
 import Bookings from "../pages/Bookings/Bookings";
+import PrivateRoute from "./PrivateRoute";
+import Orders from "../pages/Orders/Orders";
 
 
   const router = createBrowserRouter([
@@ -36,7 +38,12 @@ import Bookings from "../pages/Bookings/Bookings";
         },
         {
             path: '/bookings',
-            element: <Bookings></Bookings>
+            element: <PrivateRoute><Bookings></Bookings></PrivateRoute>
+        },
+        {
+          path:'/orders',
+          element: <PrivateRoute><Orders></Orders></PrivateRoute>
+
         }
       ]
     },

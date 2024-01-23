@@ -19,18 +19,20 @@ const BookService = () => {
         const email = form.email.value;
         const phone = form.phone.value;
         const date = form.date.value;
+        const price = form.due.value;
         const bookings = {
             customerName : name,
             email,
             phone,
             date,
             img,
+            price,
             service_id: _id,
             service: title
 
 
         } 
-        console.log(bookings);
+       
         fetch('http://localhost:5000/bookings',{
             method: 'POST',
             headers:{

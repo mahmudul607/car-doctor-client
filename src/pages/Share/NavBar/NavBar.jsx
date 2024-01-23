@@ -15,6 +15,7 @@ const NavBar = () => {
     {
       user &&  <li> <Link to={'/bookings'}>Bookings</Link> </li>
     }
+    <li> <Link to={'/orders'}>Orders</Link> </li>
     <li> <Link to={'/contact'}>Contact</Link> </li>
 
 
