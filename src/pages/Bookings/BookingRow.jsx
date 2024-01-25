@@ -43,7 +43,7 @@ const BookingRow = ({ booking, handleDelete, handleBookingUpdate }) => {
 };
 
 BookingRow.propTypes = {
-    booking: PropTypes.node,
+    booking: PropTypes.object,
     handleDelete: PropTypes.func.isRequired,
     handleBookingUpdate: PropTypes.func.isRequired,
 

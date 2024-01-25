@@ -23,7 +23,7 @@ const ProductCard = ({product}) => {
 };
 
 ProductCard.propTypes = {
-    product: PropTypes.array.isRequired
+    product: PropTypes.object.isRequired
     
 };
 

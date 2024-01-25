@@ -24,7 +24,7 @@ const ServiceCard = ({ service }) => {
 };
 
 ServiceCard.propTypes = {
-    service: PropTypes.array
+    service: PropTypes.object
 };
 
 export default ServiceCard;

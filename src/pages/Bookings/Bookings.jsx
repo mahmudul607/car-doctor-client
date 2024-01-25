@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import BookingRow from "./BookingRow";
+import axios from "axios";
+
 
 
 const Bookings = () => {
@@ -9,9 +11,14 @@ const Bookings = () => {
     const [bookings, setBookings]= useState([])
     const url=(`http://localhost:5000/bookings?email=${user?.email}`);
    useEffect(()=>{
-    fetch(url)
-    .then(res => res.json())
-    .then(data => setBookings(data))
+
+    axios.get(url, {withCredentials: true})
+    .then(res =>{
+      setBookings(res.data)
+    })
+    // fetch(url)
+    // .then(res => res.json())
+    // .then(data => setBookings(data))
    },[url])
 
    const handleDelete = id =>{
@@ -64,7 +71,7 @@ const Bookings = () => {
       <tr>
         <th>
           <label>
-            <input type="checkbox" className="checkbox" />
+            
           </label>
         </th>
 
@@ -79,7 +86,7 @@ const Bookings = () => {
     <tbody>
         {
             bookings.map(booking => <BookingRow
-            key={user._id}
+            key={booking._id}
             booking={booking}
            handleDelete={handleDelete}
            handleBookingUpdate={handleBookingUpdate}
