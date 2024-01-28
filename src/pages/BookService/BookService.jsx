@@ -48,7 +48,10 @@ const BookService = () => {
     }
     return (
         <div>
-            <QuickNav></QuickNav>
+            <QuickNav
+              title={'Booked Your Needs'}
+              path={' bookings'}
+            ></QuickNav>
             <div>
 
                 <div>

@@ -10,7 +10,7 @@ const NavBar = () => {
   const navItems = <>
     <li> <Link to={'/'}>Home</Link> </li>
     <li> <Link to={'/about'}>About</Link> </li>
-    <li> <Link to={'/service'}>Service</Link> </li>
+    <li> <Link to={'/services'}>Service</Link> </li>
     <li> <Link to={'/blog'}>Blog</Link> </li>
     {
       user &&  <li> <Link to={'/bookings'}>Bookings</Link> </li>
@@ -46,10 +46,10 @@ const NavBar = () => {
       </div>
       <div className="navbar-end">
         <div className="gap-6 flex mx-4">
-          <Link><FaShoppingCart /></Link>
-          <Link><FaSearch /></Link>
+          <Link className="text-[#FF3811]"><FaShoppingCart /></Link>
+          <Link className="text-[#FF3811]"><FaSearch /></Link>
         </div>
-        <button className="btn btn-outline btn-secondary">Appointment</button>
+        <button className="btn btn-outline  text-[#FF3811]">Appointment</button>
         {
           (user?  <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
@@ -74,7 +74,7 @@ const NavBar = () => {
             <li><a>Settings</a></li>
             <li onClick={handleLogOut}><a>Logout</a></li>
           </ul>
-        </div>:<Link to={'/login'}>Login</Link>)
+        </div>:<Link className="text-[#FF3811] font-bold ml-2" to={'/login'}>Login</Link>)
         }
       </div>
     </div>

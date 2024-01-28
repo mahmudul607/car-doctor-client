@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer p-10 bg-base-200 text-base-content">
       <aside>
         <img src={logo} alt="" />
-        <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
+        <p>Car Doctor Service Ltd.<br />Providing reliable tech since 1992</p>
         <div className="card-actions ">
         <FaFacebookF className="w-[30px] h-[30px] p-2 bg-[#395185] text-white rounded-full" />
         <FaTwitter className="w-[30px] h-[30px] p-2 bg-[#55ACEE] text-white rounded-full" />
