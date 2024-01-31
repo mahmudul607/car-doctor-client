@@ -29,10 +29,11 @@ const Footer = () => {
         <a className="link link-hover">Press kit</a>
       </nav>
       <nav>
-        <header className="footer-title">Legal</header>
-        <a className="link link-hover">Terms of use</a>
+        <header className="footer-title">Visit My Portfolio</header>
+
+        {/* <a className="link link-hover">Terms of use</a>
         <a className="link link-hover">Privacy policy</a>
-        <a className="link link-hover">Cookie policy</a>
+        <a className="link link-hover">Cookie policy</a> */}
       </nav>
     </footer>
   );

@@ -47,6 +47,7 @@ const Home = () => {
             <Team></Team>
             <OurFeatures></OurFeatures>
             <Testimonial></Testimonial>
+            
         </div>
     );
 };
