@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ServiceManage from "./ServiceManage";
 import QuickNav from "../Share/QuickNav/QuickNav";
-import { Link } from "react-router-dom";
+
 
 
 const Services = () => {
@@ -32,9 +32,7 @@ const Services = () => {
                 ></ServiceManage>)
             }
             </div>
-            <div>
-                <Link></Link>
-            </div>
+           
         </div>
     );
 };

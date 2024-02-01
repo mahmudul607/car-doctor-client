@@ -19,7 +19,7 @@ const ServiceManage = ({service}) => {
                 <p>{facility[2].name}</p>
 
                 <div className="card-actions ">
-                    <button className="btn btn-primary">Details</button>
+                    <Link to={`/servicedetails`} className="btn btn-primary">Details</Link>
                     <Link to={`/services/${_id}`} className="btn btn-primary"><FaRegEye/></Link>
                     <Link to={`/services/${_id}`} className="btn btn-primary"><RiDeleteBin6Line/></Link>
                 </div>

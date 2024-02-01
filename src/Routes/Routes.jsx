@@ -12,6 +12,8 @@ import PrivateRoute from "./PrivateRoute";
 import Orders from "../pages/Orders/Orders";
 import Services from "../pages/Services/Services";
 import AddService from "../pages/AddService/AddService";
+import ServiceDetails from "../pages/Services/ServiceDetails/ServiceDetails";
+
 
 
   const router = createBrowserRouter([
@@ -54,6 +56,10 @@ import AddService from "../pages/AddService/AddService";
         {
           path:'/addservice',
           element: <AddService></AddService>
+        },
+        {
+          path:'/servicedetails',
+          element: <ServiceDetails></ServiceDetails>
         }
       ]
     },

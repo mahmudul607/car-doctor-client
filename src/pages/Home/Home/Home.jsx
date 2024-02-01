@@ -8,16 +8,17 @@ import Products from "../Products/Products";
 import Team from "../Team/Team";
 import OurFeatures from "../OurFeatures/OurFeatures";
 import Testimonial from "../Testimonial/Testimonial";
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
     const [services, setServices] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch('http://localhost:5000/services')
-        .then(res => res.json())
-        .then(data => setServices(data))
-    },[])
+            .then(res => res.json())
+            .then(data => setServices(data))
+    }, [])
     return (
         <div>
             <Banner></Banner>
@@ -32,22 +33,26 @@ const Home = () => {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {
                         services.map(service => <ServiceCard
-                         key={service._id}
-                         service={service}
-                        ></ServiceCard> )
+                            key={service._id}
+                            service={service}
+                        ></ServiceCard>)
                     }
+                    
                 </div>
+                <div className="text-center pt-6">
+                        <Link to={'/services'} className="btn hover:btn-primary bg-[#FF3811]">More Services</Link>
+                    </div>
 
             </div>
             {/* Quick Solution */}
             <QuickSolution></QuickSolution>
             {/* Products section */}
-           
+
             <Products></Products>
             <Team></Team>
             <OurFeatures></OurFeatures>
             <Testimonial></Testimonial>
-            
+
         </div>
     );
 };
