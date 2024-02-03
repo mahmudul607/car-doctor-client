@@ -1,5 +1,34 @@
 
+
+
 @import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root{
+    --body_background: white;
+    --body_color: black;
+    --card-bg: #64748b;
+    --text_third: black;
+    
+
+}
+
+[data-theme = "dark"] {
+    --body_background:black;
+    --body_color:white;
+    --text_third: black;
+   --card-bg: #64748b;
+    
+
+}
+[data-theme="light"]{
+
+    --body_background:white;
+    --body_color:black;
+    --text_third: black;
+   --card-bg: #64748b;
+
+}

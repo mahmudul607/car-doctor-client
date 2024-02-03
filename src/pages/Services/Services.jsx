@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ServiceManage from "./ServiceManage";
 import QuickNav from "../Share/QuickNav/QuickNav";
-
+import bgImg from "../../assets/images/checkout/checkout.png"
 
 
 const Services = () => {
@@ -21,6 +21,7 @@ const Services = () => {
                 <QuickNav
                 title={'Service Manager Area'}
                 path={'services'}
+                bgImg={bgImg}
                 ></QuickNav>
             </div>
             <div className="gap-2">

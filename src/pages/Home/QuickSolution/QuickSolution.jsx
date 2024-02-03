@@ -1,9 +1,10 @@
 
 import { LuCalendarClock } from "react-icons/lu";
 import { MdOutlineAddIcCall, MdLocationPin  } from "react-icons/md";
+import './QuickSolution.css'
 const QuickSolution = () => {
     return (
-        <div className="mt-6 p-8 bg-black text-white rounded-lg ">
+        <div className="mt-6 p-8 card-bg bg-black text-white rounded-lg ">
             {/* <h4 className="text-center p-4">Quick Solution</h4> */}
             <div className="grid lg:grid-cols-3 p-6">
                 <div className="shedule text-left flex items-center">

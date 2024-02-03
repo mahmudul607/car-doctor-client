@@ -3,10 +3,19 @@ import PropTypes from 'prop-types';
 import navImg from "../../../assets/images/quickpath.png";
 import './QuickNav.css'
 
-const QuickNav = ({path, title}) => {
+
+
+const QuickNav = ({path, title, bgImg}) => {
+  
+    const quickNavStyle ={
+       backgroundImage: `url(${bgImg})`,
+       backgroundSize: 'cover',
+       backgroundRepeat: 'no-repeat',
+        
+    }
     return (
         <div className=" w-full quickNav">
-            <div className="quick-nav h-[300px] rounded relative flex justify-center text-white">
+            <div style={quickNavStyle} className="quick-nav h-[300px] rounded relative flex justify-center text-white">
                 <h1 className="mt-4 h-16 p-2 text-6xl font-bold text-white font-salsa rounded-lg bg-black/[.55]">{title}</h1>
                 {/* <img src={img} alt="img" /> */}
                 <div className="absolute flex  bottom-0 w-1/5 justify-center">
@@ -25,5 +34,6 @@ const QuickNav = ({path, title}) => {
 QuickNav.propTypes = {
     path: PropTypes.string,
     title: PropTypes.string,
+    bgImg: PropTypes.object,
 };
 export default QuickNav;

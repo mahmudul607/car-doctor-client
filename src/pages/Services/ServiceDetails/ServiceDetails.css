@@ -1,0 +1,7 @@
+.customStyle{
+    color: var(--text_third);
+}
+.bg-style{
+    background-color: var(--body_color);
+    color: var(--body_background);
+}

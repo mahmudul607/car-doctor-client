@@ -3,29 +3,40 @@ import logo from '../../../assets/logo.svg';
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+// import logo1 from "../../../assets/images/logo.PNG";
+
+
 
 const NavBar = () => {
-  const {user, logOut} = useContext(AuthContext);
- 
+  const { user, logOut } = useContext(AuthContext);
+  
+
   const navItems = <>
     <li> <Link to={'/'}>Home</Link> </li>
-    <li> <Link to={'/about'}>About</Link> </li>
+    <li> <Link to={'/shop'}>Shop</Link> </li>
     <li> <Link to={'/services'}>Service</Link> </li>
     <li> <Link to={'/blog'}>Blog</Link> </li>
+
+    {/* when admin and local user is divided then modify this route */}
+    {/* {
+      user.admin&& <li> <Link to={'/orders'}>Orders</Link></li>
+    } */}
     {
-      user &&  <li> <Link to={'/bookings'}>Bookings</Link> </li>
+      <li> <Link to={'/orders'}>Orders</Link></li>
     }
-    <li> <Link to={'/orders'}>Orders</Link> </li>
+    <li> <Link to={'/about'}>About</Link> </li>
     <li> <Link to={'/contact'}>Contact</Link> </li>
 
 
   </>
 
   const handleLogOut = () => {
-      logOut();
+    logOut();
   }
+
+  
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100  ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,8 +46,8 @@ const NavBar = () => {
             {navItems}
           </ul>
         </div>
-        <Link to={'/home'} className="btn btn-ghost text-xl">
-          <img className="w-full h-full" src={logo} alt="" />
+        <Link to={'/'} className="btn btn-ghost text-2xl">
+          <img className="w-full h-full text-2xl" src={logo} alt="" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -51,31 +62,41 @@ const NavBar = () => {
         </div>
         <button className="btn btn-outline  text-[#FF3811]">Appointment</button>
         {
-          (user?  <div className="dropdown dropdown-end">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+          (user ? <div className="dropdown dropdown-end">
+            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+              </div>
             </div>
-          </div>
-          <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-            <li>
-              <a className="justify-between">
-                {user.displayName}
+            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+              <li>
+                <a className="justify-between">
+                  {user.displayName}
+
+                </a>
+              </li>
+              <li>
+                <a className="justify-between">
+
+                  {user.email}
+
+                </a>
+              </li>
+              <li>
+              
+
+                  {
+                    user && <Link to={'/bookings'}>My Bookings</Link> 
+                  }
+
                 
-              </a>
-            </li>
-            <li>
-              <a className="justify-between">
-                
-                {user.email}
-               
-              </a>
-            </li>
-            <li><a>Settings</a></li>
-            <li onClick={handleLogOut}><a>Logout</a></li>
-          </ul>
-        </div>:<Link className="text-[#FF3811] font-bold ml-2" to={'/login'}>Login</Link>)
+              </li>
+              <li><a>Settings</a></li>
+              <li onClick={handleLogOut}><a>Logout</a></li>
+            </ul>
+          </div> : <Link className="text-[#FF3811] font-bold ml-2" to={'/login'}>Login</Link>)
         }
+       
       </div>
     </div>
   );
