@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from '../../../assets/logo.svg';
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 // import logo1 from "../../../assets/images/logo.PNG";
 
@@ -9,9 +9,22 @@ import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
-  
+  const [tabActive, setTabActive]= useState('blog');
+ 
 
+  const tabs = ['blog', 'shop', 'services'];
+
+
+  const handleTabs = (tabIndex) =>{
+    console.log(tabIndex)
+    setTabActive(tabIndex)
+    console.log(tabActive)
+
+  }
+
+  
   const navItems = <>
+ 
     <li> <Link to={'/'}>Home</Link> </li>
     <li> <Link to={'/shop'}>Shop</Link> </li>
     <li> <Link to={'/services'}>Service</Link> </li>
@@ -26,6 +39,21 @@ const NavBar = () => {
     }
     <li> <Link to={'/about'}>About</Link> </li>
     <li> <Link to={'/contact'}>Contact</Link> </li>
+<div role="tablist"   className="tabs tabs-lifted">
+  {
+    tabs.map((tabIndex) =><Link 
+      role="tab" 
+      to={`/${tabIndex}`}
+      key={tabIndex} 
+      className={`tab ${(tabActive === tabIndex) ? 'tab-active' : ''}`}
+      onClick={() => handleTabs(tabIndex)}
+      >{tabIndex}
+      
+      </Link> )
+  }
+  
+  
+</div>
 
 
   </>

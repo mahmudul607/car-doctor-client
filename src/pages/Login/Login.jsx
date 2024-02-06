@@ -1,27 +1,31 @@
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import img from "../../assets/images/login/login.svg"
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 const Login = () => {
-    const {loginUser} = useContext(AuthContext)
+    const {loginUser, logOut} = useContext(AuthContext)
+    const [loginError, setLoginError] = useState(null)
     const location = useLocation();
     const navigate = useNavigate();
+
+
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+
         
+        setLoginError(null)
        
         loginUser(email, password)
-        .then(() =>{
+        .then(result=>{
             // console.log(loggedInUser);
-            const user = {email};
-            alert('logged in successfully');
-            
-            // get access token
+            if(result.user.emailVerified){
+                const user = result.email;
             axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
             .then(res => {
                 
@@ -29,15 +33,36 @@ const Login = () => {
                     navigate(location?.state?  location.state : '/' )
                 }
             })
+
+            }
+            else{
+                logOut();
+                setLoginError("Please verify your account and try again")
+                
+            }
+            
             
         })
         .catch(err =>{
             console.log(err);
-            console.log(err.message);
+            
+            setLoginError("Please verify your account and try again")
+
         })
 
 
     };
+
+    if(loginError){
+    Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: loginError,
+        
+      });
+    }
+    
+    
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">

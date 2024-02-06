@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "alpinejs": "^3.13.5",
     "axios": "^1.6.5",
     "dotenv": "^16.3.2",
     "firebase": "^10.7.2",
@@ -22,6 +23,7 @@
     "react-player": "^2.14.1",
     "react-router-dom": "^6.21.2",
     "sort-by": "^1.2.0",
+    "sweetalert2": "^11.10.4",
     "swiper": "^11.0.5",
     "video-react": "^0.16.0"
   },

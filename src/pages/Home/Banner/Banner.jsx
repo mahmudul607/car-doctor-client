@@ -6,7 +6,10 @@ import img4 from "../../../assets/images/banner/4.jpg";
 // import img6 from "../../../assets/images/banner/6.jpg";
 
 const Banner = () => {
+
+   
     return (
+      
         <div className="carousel w-full h-[600px]">
             <div id="slide1" className="carousel-item relative w-full">
                 <img src={img1} className="w-full" />
@@ -15,7 +18,7 @@ const Banner = () => {
                         <h2 className="text-6xl font-bold ">Affordable Price For Car Servicing</h2>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                         <div>
-                            <button className="btn btn-active btn-primary bg-[#FF3811] mr-5">Primary</button>
+                            <button className="btn border-[#FF3811] btn-active btn-primary bg-[#FF3811] mr-5">Primary</button>
                             <button className="btn btn-outline btn-secondary">Secondary</button>
                         </div>
                     </div>
@@ -77,6 +80,7 @@ const Banner = () => {
                 </div>
             </div>
         </div>
+  
     );
 };
 
