@@ -3,6 +3,8 @@ import { useLoaderData } from "react-router-dom";
 import QuickNav from "../Share/QuickNav/QuickNav";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
+import imgBg from "../../assets/images/banner/3.jpg"
 
 
 const BookService = () => {
@@ -13,9 +15,8 @@ const BookService = () => {
     const handleOrder = (e) => {
         e.preventDefault();
         const form = e.target;
-        const name1 = form.firstName.value;
-        const name2 = form.lastName.value;
-        const name = name1 +' '+ name2;
+        const name = form.firstName.value;
+        const serviceName = form.serviceName.value;
         const email = form.email.value;
         const phone = form.phone.value;
         const date = form.date.value;
@@ -28,29 +29,50 @@ const BookService = () => {
             img,
             price,
             service_id: _id,
-            service: title
+            service: serviceName
 
 
         } 
-       
-        fetch('http://localhost:5000/bookings',{
-            method: 'POST',
-            headers:{
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(bookings)
-        })
-        .then(res => res.json())
 
-        .then(data =>{
-            console.log(data);
-        })
+        Swal.fire({
+            title: "Do you want to Confirm the Booking?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Confirm",
+            denyButtonText: `Don't Booking`
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              Swal.fire("Confirmed!", "", "success");
+
+              fetch('http://localhost:5000/bookings',{
+                method: 'POST',
+                headers:{
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(bookings)
+            })
+            .then(res => res.json())
+    
+            .then(data =>{
+                console.log(data);
+                
+            })
+
+            } else if (result.isDenied) {
+              Swal.fire("Booking are not confirmed", "", "info");
+              return;
+            }
+          });
+       
+       
     }
     return (
         <div>
             <QuickNav
               title={'Booked Your Needs'}
               path={' bookings'}
+              bgImg={imgBg}
             ></QuickNav>
             <div>
 
@@ -70,9 +92,9 @@ const BookService = () => {
                                         </div>
                                         <div className="w-1/2">
                                             <label className="label">
-                                                <span className="label-text">Last Name</span>
+                                                <span className="label-text">Service Name</span>
                                             </label>
-                                            <input type="text" placeholder="Last Name" name="lastName" className="input input-bordered w-full" required />
+                                            <input type="text" placeholder="Service Name" defaultValue={title} name="serviceName" className="input input-bordered w-full" required />
                                         </div>
                                     </div>
                                     <div className="form-control w-full lg:flex-row gap-4">

@@ -9,7 +9,7 @@ const OurFeatures = () => {
         <div className="my-6">
             <div className="text-center">
                 <h4 className="font-bold text-[#FF3811] text-4xl">Core Features</h4>
-                <h2 className="text-2xl font-bold text-black">Why Choose Us</h2>
+                <h2 className="text-2xl font-bold ">Why Choose Us</h2>
                 <p>the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which do not look even slightly believable. </p>
 
             </div>

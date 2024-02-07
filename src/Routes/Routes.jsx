@@ -47,7 +47,7 @@ import About from "../pages/Home/About/About";
         },
         {
             path: '/bookings',
-            element: <PrivateRoute><Bookings></Bookings></PrivateRoute>
+            element: <Bookings></Bookings>
         },
         {
           path:'/orders',

@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import logo from '../../../assets/logo.svg';
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import logo from '../../../assets/finallogo.png';
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 // import logo1 from "../../../assets/images/logo.PNG";
 
@@ -9,60 +9,88 @@ import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [tabActive, setTabActive]= useState('blog');
+  const [tabActive, setTabActive] = useState('');
+  const location = useLocation();
+  const navigate = useNavigate();
+
+
+console.log(user)
+  
+  const [tabsArray, setTabsArray] = useState([]);
+
+ 
+useEffect(()=>{
+
+  const tabs = ['', 'shop', 'services', 'blog', 'about', 'contact'];
+  if(location){
+    setTabActive((location.pathname).slice(1))
+    console.log((location.pathname).slice(1))
+  }
+  setTabsArray(tabs);
+
+  if(user){
+    const userAccess = 'orders'
+  
+    const newTabs = [...tabs, userAccess]
+  console.log(newTabs)
+  setTabsArray(newTabs);
+  
+  
+  }
+},[user, location])
  
 
-  const tabs = ['blog', 'shop', 'services'];
 
-
-  const handleTabs = (tabIndex) =>{
+  const handleTabs = (tabIndex) => {
     console.log(tabIndex)
     setTabActive(tabIndex)
     console.log(tabActive)
 
   }
 
-  
+
   const navItems = <>
- 
-    <li> <Link to={'/'}>Home</Link> </li>
+
+    {/* <li> <Link to={'/'}>Home</Link> </li>
     <li> <Link to={'/shop'}>Shop</Link> </li>
     <li> <Link to={'/services'}>Service</Link> </li>
-    <li> <Link to={'/blog'}>Blog</Link> </li>
+    <li> <Link to={'/blog'}>Blog</Link> </li> */}
 
     {/* when admin and local user is divided then modify this route */}
     {/* {
       user.admin&& <li> <Link to={'/orders'}>Orders</Link></li>
     } */}
-    {
+
+    {/* {
       <li> <Link to={'/orders'}>Orders</Link></li>
     }
     <li> <Link to={'/about'}>About</Link> </li>
-    <li> <Link to={'/contact'}>Contact</Link> </li>
-<div role="tablist"   className="tabs tabs-lifted">
-  {
-    tabs.map((tabIndex) =><Link 
-      role="tab" 
-      to={`/${tabIndex}`}
-      key={tabIndex} 
-      className={`tab ${(tabActive === tabIndex) ? 'tab-active' : ''}`}
-      onClick={() => handleTabs(tabIndex)}
-      >{tabIndex}
-      
-      </Link> )
-  }
-  
-  
-</div>
+    <li> <Link to={'/contact'}>Contact</Link> </li> */}
+    <div role="tablist" className="tabs tabs-lifted">
+      {
+        tabsArray.map((tabIndex) => <Link
+          role="tab"
+          to={`/${tabIndex}`}
+          key={tabIndex}
+          className={`tab ${(tabActive === tabIndex) ? 'tab-active' : ''}`}
+          onClick={() => handleTabs(tabIndex)}
+        >{tabIndex === ''? 'Home' : tabIndex[0].toUpperCase(tabIndex) + tabIndex.slice(1)}
+
+        </Link>)
+      }
+
+
+    </div>
 
 
   </>
 
   const handleLogOut = () => {
     logOut();
+    navigate('/login')
   }
 
-  
+
   return (
     <div className="navbar bg-base-100  ">
       <div className="navbar-start">
@@ -111,20 +139,20 @@ const NavBar = () => {
                 </a>
               </li>
               <li>
-              
 
-                  {
-                    user && <Link to={'/bookings'}>My Bookings</Link> 
-                  }
 
-                
+                {
+                  user && <Link to={'/bookings'}>My Bookings</Link>
+                }
+
+
               </li>
               <li><a>Settings</a></li>
               <li onClick={handleLogOut}><a>Logout</a></li>
             </ul>
           </div> : <Link className="text-[#FF3811] font-bold ml-2" to={'/login'}>Login</Link>)
         }
-       
+
       </div>
     </div>
   );

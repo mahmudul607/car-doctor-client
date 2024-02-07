@@ -6,12 +6,17 @@
 @tailwind components;
 @tailwind utilities;
 
+.tab{
+    --tab-border-color: rgba(255, 56, 17, 0.3)
+    --tab-border: 3px;
+}
 
 :root{
     --body_background: white;
     --body_color: black;
     --card-bg: #64748b;
     --text_third: black;
+    
     
 
 }

@@ -1,0 +1,44 @@
+.shop-carousel {
+    background: url('../../../assets/images/cars/banner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.shop-carousel .banner-img{
+  
+    height: 500px;
+    
+}
+
+.shop-carousel .slide {
+    width: 100%;
+
+}
+/* .shop-carousel .slide .slide-area{
+    text-align: right;
+} */
+
+
+.shop-carousel .thumb{
+    display: none !important;
+
+    /* if thumb display block then apply them */
+    /* height: 80px;
+    margin: auto;
+    text-align: center;
+    justify-content: center; */
+}
+
+/* .shop-carousel .thumb img{
+    height: 100%;
+} */
+
+.shop-carousel .thumbs-wrapper .control-arrow{
+    display: none !important;
+}
+
+.shop-carousel p{
+    color: var(--text_third);
+}

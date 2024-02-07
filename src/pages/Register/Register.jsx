@@ -36,12 +36,12 @@ const Register = () => {
              return;
         }
 
-        createUser(email, password, name, accountType)
+        createUser(email, password)
         .then((result) => {
             const user = result.user;
           
             updateProfile(result.user, {
-                displayName: name, photoURL: "https://i.ibb.co/ygth6MP/1mh.png", type: accountType
+                displayName: name, photoURL: "https://i.ibb.co/ygth6MP/1mh.png", role: accountType
             })
             .then(()=>{
                 console.log("User updated");

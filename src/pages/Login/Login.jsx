@@ -25,7 +25,8 @@ const Login = () => {
         .then(result=>{
             // console.log(loggedInUser);
             if(result.user.emailVerified){
-                const user = result.email;
+                const user = result.user;
+                console.log(user)
             axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
             .then(res => {
                 

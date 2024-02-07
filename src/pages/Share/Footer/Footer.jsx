@@ -1,6 +1,6 @@
 
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
-import logo from '../../../assets/logo.svg';
+import logo from '../../../assets/finallogo.png';
 import { QRCodeCanvas } from 'qrcode.react';
 const Footer = () => {
   return (
