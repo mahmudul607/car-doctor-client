@@ -12,17 +12,17 @@ import img2 from "../../../assets/images/bg-lebel/services-icon-02.svg";
 import img3 from "../../../assets/images/bg-lebel/services-icon-03.svg";
 import { Carousel } from "react-responsive-carousel";
 import SectionHeader from "../../Share/SectionHeader/SectionHeader";
-import bxSelection from "../../../assets/bx-selection.svg"
-import bxCrown from "../../../assets/bx-user-check.svg"
-import bxMan from "../../../assets/bx-user-check.svg"
+import { BiSelection } from "react-icons/bi";
+import { LuCrown } from "react-icons/lu";
+import { FiUserCheck } from "react-icons/fi";
 
-const About = () => {
+const About = () => { 
 
     const location = useLocation();
     console.log(location);
 
     return (
-        <div >
+        <div className="about-section">
             {location?.pathname === '/about' ?
                 <QuickNav
                     title={'ABOUT US'}
@@ -162,44 +162,127 @@ const About = () => {
                             <li>Environmentally friendly practices</li>
                         </ul>
 
-                        <h2 className="text-2xl font-bold mb-2">Why Choose Us</h2>
+                        {/* <h2 className="text-2xl font-bold mb-2">Why Choose Us</h2>
                         <ul className="list-disc pl-6 mb-4">
                             <li>Experienced and certified technicians</li>
                             <li>State-of-the-art facilities</li>
                             <li>Commitment to customer satisfaction</li>
                             <li>Transparent and fair pricing</li>
-                            {/* Add more reasons as needed */}
-                        </ul>
- {/* why choose us */}
-                        <div>
+                            
+                        </ul> */}
+                        {/* why choose us */}
+                        <div className="py-6 choose-us">
                             <div>
-                            <SectionHeader title={'Why Choose Us'} para1={'we are one of the best option for you in the service and sell section with car'}></SectionHeader>
+                                <SectionHeader title={'Why Choose Us'} para1={'we are one of the best option for you in the service and sell section with car'}></SectionHeader>
                             </div>
-                            <div>
-                                <div className="card">
-                                    <div className="card-title">
-                                        <div>
-                                            <img src={bxSelection} alt="" />
+                            <div className="grid lg:grid-cols-3 md:grid-cols-3 ms:grid-cols-3">
+                                <div className="card h-96">
+                                    <div className="card-title  p-6">
+                                        <div className="img-bg h-24 w-full p-2 rounded-lg  flex items-center">
+                                            <BiSelection className=" mx-auto text-4xl icon" alt="" />
                                         </div>
                                     </div>
-                                    <div className="card-body"></div>
+                                    <div className="card-body text-center">
+                                        <h2 className="text-2xl font-bold">
+                                            Easy & Fast Booking
+                                        </h2>
+                                        <p>Completely carinate e business testing process whereas fully researched customer service. Globally extensive content with quality. </p>
+                                    </div>
 
                                 </div>
-                                <div className="card">
-                                    <div className="card-title">
-                                        <div>
-                                            <img src={bxCrown} alt="" />
+                                <div className="card h-96 ">
+                                    <div className="card-title  p-6">
+                                        <div className="img-bg h-24 w-full  p-2 rounded-lg  flex items-center">
+                                            <LuCrown className=" mx-auto text-4xl icon " alt="" />
                                         </div>
                                     </div>
-                                    <div className="card-body"></div>
+                                    <div className="card-body text-center">
+                                        <h2 className="text-2xl font-bold">
+                                            Many Pickup Location
+                                        </h2>
+                                        <p>Completely carinate e business testing process whereas fully researched customer service. Globally extensive content with quality. </p>
+                                    </div>
 
                                 </div>
+                                <div className="card h-96">
+                                    <div className="card-title  p-6">
+                                        <div className="img-bg h-24 w-full  p-2 rounded-lg  flex items-center">
+                                            <FiUserCheck className=" mx-auto text-4xl icon " alt="" />
+                                        </div>
+                                    </div>
+                                    <div className="card-body text-center">
+                                        <h2 className="text-2xl font-bold">
+                                            Customer Satisfaction
+                                        </h2>
+                                        <p>Completely carinate e business testing process whereas fully researched customer service. Globally extensive content with quality. </p>
+                                    </div>
+
+                                </div>
+
 
                             </div>
                         </div>
-{/* end why choose us */}
+                        {/* end why choose us */}
 
-{/* testimonial carousel */}
+                        <div className="py-6">
+                            <div>
+                                <SectionHeader
+                                title={'People Ask Question'}
+                                para1={'Some people ask this question and can not find appropriate answers'}
+                                para2={'We showed these type of questions'}
+                                ></SectionHeader>
+                            </div>
+                            <div className="join join-vertical w-full">
+                                <div className="collapse collapse-arrow join-item border border-base-300">
+                                    <input type="radio" name="my-accordion-4" />
+                                    <div className="collapse-title text-xl font-medium">
+                                    How often should I service my car?
+                                    </div>
+                                    <div className="collapse-content">
+                                        <p>{` It's recommended to service your car every 6 months or every 5,000 to 7,500 miles, whichever comes first. Regular servicing helps maintain the performance, safety, and longevity of your vehicle.`}</p>
+                                    </div>
+                                </div>
+                                <div className="collapse collapse-arrow join-item border border-base-300">
+                                    <input type="radio" name="my-accordion-4" />
+                                    <div className="collapse-title text-xl font-medium">
+                                    {`What's included in a standard car service?`}
+                                    </div>
+                                    <div className="collapse-content">
+                                        <p>A standard car service typically includes oil and filter changes, checking and topping up fluids, inspecting brakes, tires, lights, and suspension components, as well as a general health check of the vehicle.</p>
+                                    </div>
+                                </div>
+                                <div className="collapse collapse-arrow join-item border border-base-300">
+                                    <input type="radio" name="my-accordion-4" />
+                                    <div className="collapse-title text-xl font-medium">
+                                    Why is regular maintenance important for my car?
+                                    </div>
+                                    <div className="collapse-content">
+                                        <p>Regular maintenance helps prevent breakdowns, identifies potential issues early, improves fuel efficiency, extends the lifespan of your vehicle, and maintains its resale value.</p>
+                                    </div>
+                                </div>
+                                <div className="collapse collapse-arrow join-item border border-base-300">
+                                    <input type="radio" name="my-accordion-4" />
+                                    <div className="collapse-title text-xl font-medium">
+                                    Can I book a service appointment online?
+                                    </div>
+                                    <div className="collapse-content">
+                                        <p>{`Absolutely! You can easily book a service appointment online through our website or by giving us a call. Simply choose a date and time convenient for you, and we'll take care of the rest.`}</p>
+                                    </div>
+                                </div>
+                                <div className="collapse collapse-arrow join-item border border-base-300">
+                                    <input type="radio" name="my-accordion-4" />
+                                    <div className="collapse-title text-xl font-medium">
+                                    How do I know if my car needs a service?
+                                    </div>
+                                    <div className="collapse-content">
+                                        <p>{`Signs that your car may need servicing include dashboard warning lights, unusual noises, vibrations, fluid leaks, decreased fuel efficiency, or if it's been over 6 months or a certain mileage since your last service.`}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        {/* testimonial carousel */}
                         <div className=" w-full testimonial-carousel">
                             <div className="text-center py-6 text-white">
                                 <h1 className="font-salsa testimonial-title text-4xl">What People say about us?</h1>
@@ -346,21 +429,21 @@ const About = () => {
                                     </div>
                                 </div>
                                 {/* Example Testimonial 1 */}
-                                
+
 
                             </Carousel>
 
                         </div>
-{/* end testimonial carousel */}
-{/* start contact section */}
+                        {/* end testimonial carousel */}
+                        {/* start contact section */}
                         <div className="mt-8">
 
                             <div>
                                 <Contact></Contact>
                             </div>
-                           
+
                         </div>
-{/* end contact section */}
+                        {/* end contact section */}
                     </div> : null
             }
             {/* end */}

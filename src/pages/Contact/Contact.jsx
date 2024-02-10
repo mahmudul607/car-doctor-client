@@ -33,7 +33,7 @@ const Contact = () => {
      return <Other setFormData={setFormData} formData={formData}></Other>
     }
     else{
-      return <Comple></Comple>
+      return <Comple status={status}></Comple>
     }
   }
 
@@ -47,7 +47,8 @@ const Contact = () => {
 
 
       </div>
-      <div className="w-1/2 bg-slate-100 p-6 shadow-xl">
+      <div className="w-1/2 text-black bg-slate-100 p-6 shadow-xl">
+     
         <div className="container mx-auto my-8">
           <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
 
@@ -70,7 +71,7 @@ const Contact = () => {
               
             </ul>
           </div>
-          <div className="data-container p-4 ">
+          <div className="data-container p-4 min-h-[25rem] relative">
             <div className="header-progressbar">
               <h1 className="text-3xl">
                 {formTitles[page]}
@@ -81,7 +82,7 @@ const Contact = () => {
                displayStep()
               }
             </div>
-            <div className="footer-progressbar gap-4 flex">
+            <div className="footer-progressbar gap-4 flex text-black absolute bottom-0">
               <button className="btn btn-outline" disabled={page ===0} onClick={() =>
               {setStatus(false)
                 setPage(current => (current - 1))
@@ -89,7 +90,7 @@ const Contact = () => {
                 
                 }>Pre</button>
               <button 
-              
+              disabled={status===true}
               className="btn btn-outline"
                onClick={() => {
                 if(page ===formTitles.length - 1){
@@ -117,7 +118,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-
+       
       </div>
     </div>
   );

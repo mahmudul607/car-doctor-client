@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const PersonalInfo = ({formData, setFormData}) => {
     return (
         <div>
-            <form  className="max-w-md">
+            <form  className="max-w-md" onSubmit={setFormData}>
         <div className="mb-4">
           <label htmlFor="name" className="block text-sm font-semibold text-gray-600 mb-1">
             Your Name

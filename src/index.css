@@ -21,6 +21,10 @@
     --body_color:black;
     --text_third: black;
    --card-bg: #f1f3f2;
+   --hover-card-bg: black;
+   --hover-card-color: white;
+   --hover-card-img-bg:white;
+   --undo-card-img-bg:black;
     
     
 
@@ -31,6 +35,10 @@
     --body_color:white;
     --text_third: white;
    --card-bg: #191e24;
+   --hover-card-bg:white;
+   --hover-card-color: black;
+   --hover-card-img-bg:black;
+   --undo-card-img-bg:white;
     
 
 }
@@ -40,5 +48,10 @@
     --body_color:black;
     --text_third: black;
    --card-bg: #f1f3f2;
+   --hover-card-bg: black;
+   --hover-card-color: white;
+   --hover-card-img-bg:white;
+   
 
 }
+

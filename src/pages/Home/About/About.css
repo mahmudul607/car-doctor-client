@@ -89,3 +89,22 @@
 .green::before{
     background: green !important;
 }
+.about-section .choose-us .card .card-title .img-bg{
+    background-color: var(--undo-card-img-bg);
+    color: var(--hover-card-color);
+}
+.about-section .choose-us .card:hover .card-title .img-bg{
+    background-color: var(--hover-card-img-bg);
+    color: var(--undo-card-img-bg);
+
+
+}
+
+.about-section .choose-us .card:hover {
+    background: var(--hover-card-bg);
+    color: var(--hover-card-color);
+}
+
+.about-section .choose-us .card:hover .card-body{
+    color: var(--hover-card-color);
+}
