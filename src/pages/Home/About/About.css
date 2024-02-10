@@ -1,0 +1,91 @@
+.icon-items .circle-img{
+  
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    padding: 1rem;
+    
+}
+.testimonial-carousel {
+    background: url('../../../assets/images/banner-removebg-preview.png');
+    background-color: #201f1d;
+    background-size: cover;
+    background-position: bottom center;
+    
+}
+/* edit for responsive with media query */
+.testimonial-carousel .carousel .slide{
+    min-width: 50% !important;
+    padding: 2%;
+    padding-top: 6%;
+  
+
+}
+.testimonial-carousel .carousel-root{
+    height: 100%;
+}
+.testimonial-carousel .carousel {
+    height: 100% !important;
+}
+
+/* reduce dots button */
+
+.testimonial-carousel .carousel .slider-wrapper .slider {
+    margin-bottom: 3rem;
+}
+
+.testimonial-carousel .carousel .control-dots > .dot {
+    flex: 1;
+    visibility: hidden;
+}
+
+.testimonial-carousel .carousel .control-dots> .dot:nth-child(-n+3) {
+    visibility: visible;
+}
+
+
+
+
+
+
+
+/* end */
+
+.testimonial-carousel .carousel .control-dots{
+    position: absolute;
+    bottom: 0;
+}
+.testimonial-carousel .carousel .control-dots .selected {
+   
+    background-color: yellow !important;
+    border-radius: 10px !important;
+    animation: dotAnimation 0.5s ease-in-out forwards !important;
+}
+
+@keyframes dotAnimation {
+    0% { 
+        width: 8px;
+    }
+    100% {
+        width: 40px;
+    }
+}
+
+
+.testimonial-carousel .testimonial-title::after{
+    content: url('../../../assets/images/afterImg/title-head.png');
+    display: flex;
+    justify-content: center;
+    
+  
+
+}
+
+/* step data-content after */
+
+.green[data-content]:after{
+    background: green;
+}
+.green::before{
+    background: green !important;
+}

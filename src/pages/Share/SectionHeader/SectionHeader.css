@@ -1,0 +1,7 @@
+.section-header .section-title::after{
+    
+    content: url('../../../assets/images/afterImg/title-head.png');
+    display: flex;
+    justify-content: center;
+    
+}

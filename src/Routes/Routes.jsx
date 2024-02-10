@@ -15,7 +15,7 @@ import AddService from "../pages/AddService/AddService";
 import ServiceDetails from "../pages/Services/ServiceDetails/ServiceDetails";
 
 import Blog from "../pages/Blog/Blog";
-import Contact from "../pages/Contact/Contact";
+
 import Shop from "../pages/Shop/Shop";
 import About from "../pages/Home/About/About";
 
@@ -72,21 +72,18 @@ import About from "../pages/Home/About/About";
           element: <Blog></Blog>
         },
         {
-          path:'/contact',
-          element: <Contact></Contact>
-        },
-        {
           path: '/shop',
           element: <Shop></Shop>
+        },
+        {
+          path:'/about',
+          element: <About></About>
         }
       ]
       
        
-    },
-    {
-      path:'/about',
-      element: <About></About>
     }
+    
   ]);
 
   export default router;

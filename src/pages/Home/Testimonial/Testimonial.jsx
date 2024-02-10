@@ -10,7 +10,7 @@ const Testimonial = () => {
 
             </div>
             <div>
-                <div className="carousel w-full h-[350px]">
+                <div className="carousel w-full h-[350px] my-6">
                     <div id="item1" className="carousel-item relative w-full">
                         <div className="carousel-item w-1/2">
                             <img src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg" className="w-full" />

@@ -4,7 +4,7 @@ import { MdOutlineAddIcCall, MdLocationPin  } from "react-icons/md";
 import './QuickSolution.css'
 const QuickSolution = () => {
     return (
-        <div className="mt-6 p-8 card-bg bg-black text-white rounded-lg ">
+        <div className="mt-6 p-8 qsolution-card-bg bg-black text-white rounded-lg mx-6">
             {/* <h4 className="text-center p-4">Quick Solution</h4> */}
             <div className="grid lg:grid-cols-3 p-6">
                 <div className="shedule text-left flex items-center">
@@ -16,7 +16,7 @@ const QuickSolution = () => {
                 </div>
                 <div className="question text-left flex items-center">
                     <MdOutlineAddIcCall className="text-3xl m-2 text-[#FF3811]"/>
-                <div className="text">
+                <div className="">
                         <p>Have a question?</p>
                         <h1 className="font-bold ">+88011111111111</h1>
                     </div>

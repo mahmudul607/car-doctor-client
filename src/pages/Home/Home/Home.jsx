@@ -23,7 +23,7 @@ const Home = () => {
         <div className="skeleton">
             <Banner></Banner>
             <About></About>
-            <div className="mt-4">
+            <div className="mt-4 px-2">
                 <div className="text-center">
                     <h4 className="font-bold text-[#FF3811] text-4xl  pb-4"><span className="border-b-4 border-dotted   border-cyan-600 w-[30px]">Services</span></h4>
                     <h2 className="text-2xl font-bold ">Our Services Area</h2>

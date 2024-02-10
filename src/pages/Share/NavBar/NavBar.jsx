@@ -21,10 +21,10 @@ console.log(user)
  
 useEffect(()=>{
 
-  const tabs = ['', 'shop', 'services', 'blog', 'about', 'contact'];
+  const tabs = ['', 'shop', 'services', 'blog', 'about'];
   if(location){
     setTabActive((location.pathname).slice(1))
-    console.log((location.pathname).slice(1))
+    
   }
   setTabsArray(tabs);
 
@@ -32,7 +32,7 @@ useEffect(()=>{
     const userAccess = 'orders'
   
     const newTabs = [...tabs, userAccess]
-  console.log(newTabs)
+
   setTabsArray(newTabs);
   
   
@@ -42,9 +42,9 @@ useEffect(()=>{
 
 
   const handleTabs = (tabIndex) => {
-    console.log(tabIndex)
+    
     setTabActive(tabIndex)
-    console.log(tabActive)
+
 
   }
 

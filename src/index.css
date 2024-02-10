@@ -12,10 +12,15 @@
 }
 
 :root{
-    --body_background: white;
+    /* --body_background: white;
     --body_color: black;
-    --card-bg: #64748b;
+    --card-bg: #f1f3f2;
+    --text_third: black; */
+
+    --body_background:white;
+    --body_color:black;
     --text_third: black;
+   --card-bg: #f1f3f2;
     
     
 
@@ -24,8 +29,8 @@
 [data-theme = "dark"] {
     --body_background:black;
     --body_color:white;
-    --text_third: black;
-   --card-bg: #64748b;
+    --text_third: white;
+   --card-bg: #191e24;
     
 
 }
@@ -34,6 +39,6 @@
     --body_background:white;
     --body_color:black;
     --text_third: black;
-   --card-bg: #64748b;
+   --card-bg: #f1f3f2;
 
 }

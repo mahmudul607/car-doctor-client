@@ -1,0 +1,33 @@
+.buy-btn{
+    background:url('../../../assets/images/bg-lebel/unnamed.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    
+    border-radius: 6px !important;
+    
+
+
+}
+.car-card .price-tag{
+    background: url('../../../assets/images/bg-lebel/price-tag.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 50;
+    
+}
+.car-card figure img:hover{
+    transform: scale(1.2);
+    transition: all 1s ease;
+    z-index: 10;
+    overflow: hidden !important;
+    
+    
+}
+.car-card figure img{
+    transition: all 1s ease;
+}
+.car-card {
+    background-color: #201f1d;
+    background: var(--card-bg);
+}

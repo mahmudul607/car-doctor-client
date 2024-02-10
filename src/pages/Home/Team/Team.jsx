@@ -11,7 +11,7 @@ const Team = () => {
                 <p>the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which do not look even slightly believable. </p>
 
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 my-6">
                 <div className="card w-full bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
                         <img src={img1} alt="image" className="rounded-xl h-[220px]" />

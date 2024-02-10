@@ -1,0 +1,9 @@
+.shop-components .popular-cars::after{
+    content: url('../../assets/images/afterImg/title-head.png');
+    display: flex;
+    justify-content: center;
+    
+  
+
+}
+

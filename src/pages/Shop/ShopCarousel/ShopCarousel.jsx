@@ -14,7 +14,7 @@ import './ShopCarousel.css'
 
 const ShopCarousel = () => {
     return (
-        <Carousel infiniteLoop autoFocus autoPlay className="shop-carousel">
+        <Carousel infiniteLoop autoFocus autoPlay showThumbs={false} className="shop-carousel">
         <div className="slide-area flex w-full justify-between">
             <div className="text-left place-items-center my-auto pl-10 lg:w-2/5">
                 <p className=" text-black flex"><FaThumbsUp className="text-green-600"/> <span className="pl-4">100% Trusted car rental platform in the World</span></p>

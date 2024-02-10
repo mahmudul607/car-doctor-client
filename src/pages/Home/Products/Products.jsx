@@ -11,14 +11,14 @@ const Products = () => {
         .then(data => setProducts(data))
     },[])
     return (
-        <div className="my-6">
+        <div className="my-6 px-2">
         <div className="text-center">
                     <h4 className="font-bold text-[#FF3811] text-4xl">Products</h4>
                     <h2 className="text-2xl font-bold ">Our Products Area</h2>
                     <p>the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which do not look even slightly believable. </p>
 
                 </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
                     {
                         products.map(product => <ProductCard
                          key={product.id}

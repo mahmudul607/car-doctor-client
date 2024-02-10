@@ -7,7 +7,7 @@ const ProductCard = ({product}) => {
 
     const {title, img, price, ratting} = product;
     return (
-        <div className="card w-full bg-base-100 shadow-xl gap-2 border">
+        <div className="card w-full bg-base-100 shadow-xl gap-2">
             <figure className="px-10 pt-10">
                 <img src={img} alt="image" className="rounded-xl h-[220px]" />
             </figure>
