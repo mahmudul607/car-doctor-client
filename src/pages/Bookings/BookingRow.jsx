@@ -4,9 +4,14 @@ import PropTypes from 'prop-types';
 import { TiDelete } from "react-icons/ti";
 
 
+
 const BookingRow = ({ booking, handleDelete, handleBookingUpdate }) => {
    
-    const {  img, price, customerName, date, _id, service, status } = booking;
+    const {  img, price, customerName, date, _id, service, status, img2} = booking;
+
+    
+    
+ 
    
     
     
@@ -21,14 +26,14 @@ const BookingRow = ({ booking, handleDelete, handleBookingUpdate }) => {
 
                 <div className="avatar">
                     <div className="w-24 rounded">
-                        <img src={img} />
+                        <img src={img || img2} />
                     </div>
                 </div>
 
 
             </td>
             <td>{service}<br/>{customerName} </td>
-            <td>{price}</td>
+            <td>$-{price}</td>
             <td>{date}</td>
             <th>
                 {

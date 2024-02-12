@@ -3,6 +3,8 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import BookingRow from "./BookingRow";
 import axios from "axios";
 import Swal from "sweetalert2";
+import NoData from "../Share/NoData/NoData";
+
 
 
 
@@ -10,6 +12,8 @@ const Bookings = () => {
 
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([])
+
+ 
   
   useEffect(() => {
     const url = (`http://localhost:5000/bookings?email=${user?.email}`);
@@ -85,7 +89,10 @@ const Bookings = () => {
   }
 
   return (
-    <div className="overflow-x-auto">
+     <>
+     { 
+      bookings ? <NoData></NoData> :
+      <div className="overflow-x-auto min-h-screen">
       <table className="table">
         {/* head */}
         <thead>
@@ -111,13 +118,20 @@ const Bookings = () => {
               booking={booking}
               handleDelete={handleDelete}
               handleBookingUpdate={handleBookingUpdate}
-            ></BookingRow>)
+            ></BookingRow>) 
           }
         </tbody>
 
 
       </table>
     </div>
+    }
+    
+     
+     
+     
+     
+     </>
   );
 };
 

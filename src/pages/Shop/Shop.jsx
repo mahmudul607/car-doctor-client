@@ -47,7 +47,7 @@ const Shop = () => {
 
             }
                   else if(brand !== '' && brand !== 'All') { 
-                    await axios.get(`http://localhost:5000/cars/${brand}`)
+                    await axios.get(`http://localhost:5000/cars/brand/${brand}`)
                     .then(res => {
                         console.log(res.data)
                         setCars(res.data)

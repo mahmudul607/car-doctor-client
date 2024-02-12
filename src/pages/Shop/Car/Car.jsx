@@ -1,9 +1,10 @@
 
 import PropTypes from 'prop-types';
 import './Car.css'
+import { Link } from 'react-router-dom';
 
 const Car = (car) => {
-    const {name, brand, details, price} =car.car;
+    const {name, brand, details, price, _id} =car.car;
     console.log(name)
     return (
         <div className="card car-card card-compact   shadow-xl">
@@ -20,7 +21,7 @@ const Car = (car) => {
                 <p>TopSpeed: {details.topSpeed}</p>
                 </div>
                 <div className="card-actions  relative flex  place-content-center lg:w-1/3 lg:flex-grow-auto">
-                    <button className="btn text-white btn-outline ">Buy Now</button>
+                    <Link className="btn text-white btn-outline " to={`/cars/${_id}`}>Buy Now</Link>
                 </div>
             </div>
         </div>

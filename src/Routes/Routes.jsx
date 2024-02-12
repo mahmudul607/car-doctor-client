@@ -18,6 +18,7 @@ import Blog from "../pages/Blog/Blog";
 
 import Shop from "../pages/Shop/Shop";
 import About from "../pages/Home/About/About";
+import ErrorElement from "../pages/ErrorElement/ErrorElement";
 
 
 
@@ -25,6 +26,7 @@ import About from "../pages/Home/About/About";
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <ErrorElement></ErrorElement>,
       children: [
         {
             path:'/',
@@ -40,14 +42,20 @@ import About from "../pages/Home/About/About";
         },
         {
           path:'/bookings/:id',
-          element: <BookService></BookService>,
+          element: <PrivateRoute><BookService></BookService></PrivateRoute>,
           loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
 
           
         },
         {
+          path: '/cars/:id',
+          element: <PrivateRoute><BookService></BookService></PrivateRoute>,
+          loader: ({params}) => fetch(`http://localhost:5000/cars/${params.id}`)
+
+        },
+        {
             path: '/bookings',
-            element: <Bookings></Bookings>
+            element: <PrivateRoute><Bookings></Bookings></PrivateRoute>
         },
         {
           path:'/orders',

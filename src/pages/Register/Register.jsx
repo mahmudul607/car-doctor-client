@@ -123,7 +123,7 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" placeholder="email" name="name" className="input input-bordered" required />
+                            <input type="text" placeholder="Name" name="name" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">

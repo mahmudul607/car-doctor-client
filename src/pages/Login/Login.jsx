@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import img from "../../assets/images/login/login.svg"
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import axios from "axios";
+
 import Swal from "sweetalert2";
 const Login = () => {
     const {loginUser, logOut} = useContext(AuthContext)
@@ -27,13 +27,14 @@ const Login = () => {
             if(result.user.emailVerified){
                 const user = result.user;
                 console.log(user)
-            axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
-            .then(res => {
+                navigate(location?.state?  location.state : '/' )
+            // axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
+            // .then(res => {
                 
-                if(res.data.success){
-                    navigate(location?.state?  location.state : '/' )
-                }
-            })
+            //     if(res.data.success){
+                    
+            //     }
+            // })
 
             }
             else{

@@ -5,14 +5,18 @@ import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import imgBg from "../../assets/images/banner/3.jpg"
+import axios from "axios";
 
 
 const BookService = () => {
     const service = useLoaderData();
-    const { price, title, img, _id } = service;
+    
+    const { price, title, img, _id, name, details} = service;
+
+    const img2 = details.images[0]
     const {user}=useContext(AuthContext);
     
-    const handleOrder = (e) => {
+    const handleBookings = (e) => {
         e.preventDefault();
         const form = e.target;
         const name = form.firstName.value;
@@ -27,6 +31,7 @@ const BookService = () => {
             phone,
             date,
             img,
+            img2,
             price,
             service_id: _id,
             service: serviceName
@@ -45,15 +50,7 @@ const BookService = () => {
             if (result.isConfirmed) {
               Swal.fire("Confirmed!", "", "success");
 
-              fetch('http://localhost:5000/bookings',{
-                method: 'POST',
-                headers:{
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(bookings)
-            })
-            .then(res => res.json())
-    
+              axios.post('http://localhost:5000/bookings', bookings)
             .then(data =>{
                 console.log(data);
                 
@@ -82,7 +79,7 @@ const BookService = () => {
 
                             <div className="card shrink-0 w-full  shadow-2xl bg-base-100">
                                 <h1 className="text-center text-3xl pt-4 font-bold text-[#FF3811]">{title}</h1>
-                                <form className="card-body" onSubmit={handleOrder}>
+                                <form className="card-body" onSubmit={handleBookings}>
                                     <div className="form-control w-full lg:flex-row gap-4">
                                         <div className="w-1/2">
                                             <label className="label">
@@ -94,7 +91,7 @@ const BookService = () => {
                                             <label className="label">
                                                 <span className="label-text">Service Name</span>
                                             </label>
-                                            <input type="text" placeholder="Service Name" defaultValue={title} name="serviceName" className="input input-bordered w-full" required />
+                                            <input type="text" placeholder="Service Name" defaultValue={title||name} name="serviceName" className="input input-bordered w-full" required />
                                         </div>
                                     </div>
                                     <div className="form-control w-full lg:flex-row gap-4">

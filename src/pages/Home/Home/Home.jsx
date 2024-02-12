@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
     const [services, setServices] = useState([]);
-
     useEffect(() => {
         fetch('http://localhost:5000/services')
             .then(res => res.json())
