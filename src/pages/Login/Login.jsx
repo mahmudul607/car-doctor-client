@@ -1,15 +1,17 @@
 
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import img from "../../assets/images/login/login.svg"
-import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
 import Swal from "sweetalert2";
+import useAuthData from "../../Hooks/useAuthData";
+
 const Login = () => {
-    const {loginUser, logOut} = useContext(AuthContext)
+    const {loginUser, logOut} = useAuthData();
     const [loginError, setLoginError] = useState(null)
     const location = useLocation();
     const navigate = useNavigate();
+  
+
 
 
     const handleLogin = (e) => {
@@ -27,8 +29,10 @@ const Login = () => {
             if(result.user.emailVerified){
                 const user = result.user;
                 console.log(user)
+                
                 navigate(location?.state?  location.state : '/' )
-            // axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
+                
+            // axios.post('https://car-doctor-server-one-gamma-38.vercel.app/jwt', user, {withCredentials: true})
             // .then(res => {
                 
             //     if(res.data.success){

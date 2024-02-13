@@ -6,12 +6,17 @@ import axios from "axios";
 
 
 
+
+
+
 const auth = getAuth(app);
 export const AuthContext = createContext(null)
+
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loader, setLoader] = useState(true);
+    
 
     const createUser = (email, password) => {
         setLoader(true);
@@ -23,20 +28,23 @@ const AuthProvider = ({ children }) => {
         setLoader(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
+
+
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth, currentUser =>{
            const userEmail = currentUser?.email || user?.email;
            const loggedUser ={email: userEmail};
+           
             setUser(currentUser);
             setLoader(false);
             if(loggedUser){
-                axios.post('http://localhost:5000/jwt', loggedUser, {withCredentials:true})
+                axios.post('https://car-doctor-server-one-gamma-38.vercel.app/jwt', loggedUser, {withCredentials:true})
                 .then(res =>{
                     console.log(res.data);
                 })
             }
             else{
-                axios.post('http://localhost:5000/logout', loggedUser, {withCredentials:true})
+                axios.post('https://car-doctor-server-one-gamma-38.vercel.app/logout', loggedUser, {withCredentials:true})
                 .then(res =>{
                     console.log(res.data);
                 })

@@ -19,7 +19,7 @@ import { FiUserCheck } from "react-icons/fi";
 const About = () => { 
 
     const location = useLocation();
-    console.log(location);
+   
 
     return (
         <div className="about-section">

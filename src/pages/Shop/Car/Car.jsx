@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Car = (car) => {
     const {name, brand, details, price, _id} =car.car;
-    console.log(name)
+    
     return (
         <div className="card car-card card-compact   shadow-xl">
             <figure className='h-2/3 relative p-2'>

@@ -14,7 +14,7 @@ const NavBar = () => {
   const navigate = useNavigate();
 
 
-console.log(user)
+
   
   const [tabsArray, setTabsArray] = useState([]);
 

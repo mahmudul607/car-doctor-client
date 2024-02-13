@@ -13,7 +13,7 @@ const Shop = () => {
 
 
     useEffect(() => {
-        axios.get('http://localhost:5000/cars')
+        axios.get('https://car-doctor-server-one-gamma-38.vercel.app/cars')
             .then(res => {
 
                 setCars(res.data);
@@ -26,11 +26,11 @@ const Shop = () => {
     }, [])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/cars')
+        axios.get('https://car-doctor-server-one-gamma-38.vercel.app/cars')
             .then(res => {
 
                 setCategorieCars(res.data);
-                console.log(res.data);
+                
 
             })
 
@@ -39,15 +39,15 @@ const Shop = () => {
 
         const loadData = async (brand='') => {
             if(brand==='All' || brand ===''){
-                await axios.get(`http://localhost:5000/cars`)
+                await axios.get(`https://car-doctor-server-one-gamma-38.vercel.app/cars`)
                     .then(res => {
-                        console.log(res.data)
+                        
                         setCars(res.data)
                     })
 
             }
                   else if(brand !== '' && brand !== 'All') { 
-                    await axios.get(`http://localhost:5000/cars/brand/${brand}`)
+                    await axios.get(`https://car-doctor-server-one-gamma-38.vercel.app/cars/brand/${brand}`)
                     .then(res => {
                         console.log(res.data)
                         setCars(res.data)

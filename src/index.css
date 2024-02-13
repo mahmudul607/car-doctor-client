@@ -33,7 +33,7 @@
 [data-theme = "dark"] {
     --body_background:black;
     --body_color:white;
-    --text_third: white;
+    --text_third: black;
    --card-bg: #191e24;
    --hover-card-bg:white;
    --hover-card-color: black;

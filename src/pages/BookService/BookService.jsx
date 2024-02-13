@@ -13,7 +13,7 @@ const BookService = () => {
     
     const { price, title, img, _id, name, details} = service;
 
-    const img2 = details.images[0]
+    const img2 = details?.images[0]
     const {user}=useContext(AuthContext);
     
     const handleBookings = (e) => {
@@ -50,7 +50,7 @@ const BookService = () => {
             if (result.isConfirmed) {
               Swal.fire("Confirmed!", "", "success");
 
-              axios.post('http://localhost:5000/bookings', bookings)
+              axios.post('https://car-doctor-server-one-gamma-38.vercel.app/bookings', bookings)
             .then(data =>{
                 console.log(data);
                 

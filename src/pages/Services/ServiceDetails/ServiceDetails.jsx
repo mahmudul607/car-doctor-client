@@ -2,23 +2,23 @@ import QuickNav from "../../Share/QuickNav/QuickNav";
 import serviceImg1 from "../../../assets/images/services/6.jpg"
 import { FaArrowRight } from "react-icons/fa";
 import ReactPlayer from "react-player";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { PiSimCardThin } from "react-icons/pi";
 import logo from "../../../assets/logo.svg"
 import bgImg from "../../../assets/images/services/1.jpg";
 import './ServiceDetails.css'
+import useServices from "../../../Hooks/useServices";
 
 const ServiceDetails = () => {
-    const [services, setServices] = useState([]);
-    useEffect(() => {
+    const services = useServices();
+    // const [services, setServices] = useState([]);
+    // useEffect(() => {
 
-        axios.get('http://localhost:5000/services')
-            .then(result => {
-                setServices(result.data);
-            } )
+    //     axios.get('https://car-doctor-server-one-gamma-38.vercel.app/services')
+    //         .then(result => {
+    //             setServices(result.data);
+    //         } )
 
-    }, [])
+    // }, [])
 
     
 

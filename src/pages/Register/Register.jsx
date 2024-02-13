@@ -68,7 +68,7 @@ const Register = () => {
 
             })
 
-            axios.post('http://localhost:5000/users',user)
+            axios.post('https://car-doctor-server-one-gamma-38.vercel.app/users',user)
             .then(res=>{
                 console.log(res.data)
                 setRegisterSuccess("Successfully registered")

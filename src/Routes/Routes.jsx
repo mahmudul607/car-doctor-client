@@ -19,6 +19,7 @@ import Blog from "../pages/Blog/Blog";
 import Shop from "../pages/Shop/Shop";
 import About from "../pages/Home/About/About";
 import ErrorElement from "../pages/ErrorElement/ErrorElement";
+import NoData from "../pages/Share/NoData/NoData";
 
 
 
@@ -41,16 +42,16 @@ import ErrorElement from "../pages/ErrorElement/ErrorElement";
           element: <Register></Register>
         },
         {
-          path:'/bookings/:id',
+          path:'/services/:id',
           element: <PrivateRoute><BookService></BookService></PrivateRoute>,
-          loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+          loader: ({params})=> fetch(`https://car-doctor-server-one-gamma-38.vercel.app/services/${params.id}`)
 
           
         },
         {
           path: '/cars/:id',
           element: <PrivateRoute><BookService></BookService></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/cars/${params.id}`)
+          loader: ({params}) => fetch(`https://car-doctor-server-one-gamma-38.vercel.app/cars/${params.id}`)
 
         },
         {
@@ -86,6 +87,10 @@ import ErrorElement from "../pages/ErrorElement/ErrorElement";
         {
           path:'/about',
           element: <About></About>
+        },
+        {
+          path:'/nodata',
+          element:<NoData></NoData>
         }
       ]
       

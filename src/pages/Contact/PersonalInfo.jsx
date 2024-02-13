@@ -48,7 +48,7 @@ const PersonalInfo = ({formData, setFormData}) => {
 
 PersonalInfo.propTypes = {
     formData: PropTypes.object,
-    setFormData: PropTypes.object
+    setFormData: PropTypes.func
     
 };
 

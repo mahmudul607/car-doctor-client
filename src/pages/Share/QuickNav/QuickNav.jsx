@@ -34,6 +34,6 @@ const QuickNav = ({path, title, bgImg}) => {
 QuickNav.propTypes = {
     path: PropTypes.string,
     title: PropTypes.string,
-    bgImg: PropTypes.object,
+    bgImg: PropTypes.string,
 };
 export default QuickNav;

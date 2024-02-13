@@ -1,7 +1,6 @@
-import { useState } from "react";
+
 import About from "../About/About";
 import Banner from "../Banner/Banner";
-import { useEffect } from "react";
 import ServiceCard from "../ServiceCard/ServiceCard";
 import QuickSolution from "../QuickSolution/QuickSolution";
 import Products from "../Products/Products";
@@ -9,15 +8,21 @@ import Team from "../Team/Team";
 import OurFeatures from "../OurFeatures/OurFeatures";
 import Testimonial from "../Testimonial/Testimonial";
 import { Link } from "react-router-dom";
+// import useService from "../../../Hooks/useServices";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 const Home = () => {
-    const [services, setServices] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/services')
-            .then(res => res.json())
-            .then(data => setServices(data))
-    }, [])
+   const [services, setServices] = useState([]);
+
+   useEffect(()=>{
+        axios.get('https://car-doctor-server-one-gamma-38.vercel.app/services')
+        .then(res=>{
+            setServices(res.data);
+        })
+   },[])
+    
     return (
         <div className="skeleton">
             <Banner></Banner>
@@ -31,7 +36,7 @@ const Home = () => {
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {
-                        services.map(service => <ServiceCard
+                        services?.map(service => <ServiceCard
                             key={service._id}
                             service={service}
                         ></ServiceCard>)

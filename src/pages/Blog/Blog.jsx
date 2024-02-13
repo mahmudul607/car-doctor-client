@@ -8,10 +8,10 @@ const Blog = () => {
   // Example car-related blog post data
 
   const [blogPost, setBlogPost] = useState([])
-  
+ 
   useEffect(()=>{
 
-    axios.get('http://localhost:5000/blogs')
+    axios.get('https://car-doctor-server-one-gamma-38.vercel.app/blogs')
     .then(res => {
       setBlogPost(res.data);
     })
@@ -21,7 +21,7 @@ const Blog = () => {
     <div>
 
       <div>
-      <BlogPage blogPost={blogPost} />
+      <BlogPage key={blogPost._id} blogPost={blogPost} />
       </div>
      
     </div>

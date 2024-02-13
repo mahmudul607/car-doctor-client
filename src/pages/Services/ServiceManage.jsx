@@ -20,8 +20,8 @@ const ServiceManage = ({service}) => {
 
                 <div className="card-actions ">
                     <Link to={`/servicedetails`} className="btn btn-primary">Details</Link>
-                    <Link to={`/services/${_id}`} className="btn btn-primary"><FaRegEye/></Link>
-                    <Link to={`/services/${_id}`} className="btn btn-primary"><RiDeleteBin6Line/></Link>
+                    <Link to={`/services/view/${_id}`} className="btn btn-primary"><FaRegEye/></Link>
+                    <Link to={`/services/delete/${_id}`} className="btn btn-primary"><RiDeleteBin6Line/></Link>
                 </div>
             </div>
         </div>

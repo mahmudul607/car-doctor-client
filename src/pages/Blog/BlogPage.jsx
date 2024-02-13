@@ -52,7 +52,7 @@ const BlogPage = ({ blogPost }) => {
 };
 BlogPage.propTypes = {
 
-  blogPost: PropTypes.object
+  blogPost: PropTypes.array
 
 };
 

@@ -67,8 +67,8 @@ const BlogSwiper = ({img1, img2}) => {
   );
 };
 BlogSwiper.propTypes ={
-    img1: PropTypes.image,
-    img2: PropTypes.image,
+    img1: PropTypes.func,
+    img2: PropTypes.func,
 }
 
 export default BlogSwiper;

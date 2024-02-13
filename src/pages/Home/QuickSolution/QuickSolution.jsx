@@ -16,7 +16,7 @@ const QuickSolution = () => {
                 </div>
                 <div className="question text-left flex items-center">
                     <MdOutlineAddIcCall className="text-3xl m-2 text-[#FF3811]"/>
-                <div className="">
+                <div className="text">
                         <p>Have a question?</p>
                         <h1 className="font-bold ">+88011111111111</h1>
                     </div>

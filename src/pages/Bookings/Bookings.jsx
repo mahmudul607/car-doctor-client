@@ -1,23 +1,37 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useEffect, useState } from "react";
 import BookingRow from "./BookingRow";
-import axios from "axios";
 import Swal from "sweetalert2";
 import NoData from "../Share/NoData/NoData";
+// import { useNavigate } from "react-router-dom";
+import useAuthData from "../../Hooks/useAuthData";
+// import axios from "axios";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 
 
 
 const Bookings = () => {
 
-  const { user } = useContext(AuthContext);
+  // const { user } = useContext(AuthContext);
+  const { user} = useAuthData();
+const axiosSecure = useAxiosSecure();
+ 
   const [bookings, setBookings] = useState([])
 
+
+  // const navigate = useNavigate();
+
+  // if(bookings.length <= 0) {
+
+  //   navigate('/nodata');
+
+  // }
+
  
-  
+  const url = (`/bookings?email=${user?.email}`);
   useEffect(() => {
-    const url = (`http://localhost:5000/bookings?email=${user?.email}`);
-    axios.get(url, { withCredentials: true })
+    
+    axiosSecure.get(url)
       .then(res => {
      
         setBookings(res.data)
@@ -25,7 +39,7 @@ const Bookings = () => {
     // fetch(url)
     // .then(res => res.json())
     // .then(data => setBookings(data))
-  }, [user])
+  }, [url])
 
   const handleDelete = id => {
 
@@ -40,7 +54,7 @@ const Bookings = () => {
       if (result.isConfirmed) {
         Swal.fire("Delete!", "", "success");
 
-        fetch(`http://localhost:5000/bookings/${id}`, {
+        fetch(`https://car-doctor-server-one-gamma-38.vercel.app/bookings/${id}`, {
         method: 'DELETE',
       })
         .then(res => res.json())
@@ -68,7 +82,7 @@ const Bookings = () => {
   }
   const handleBookingUpdate = id => {
 
-    fetch(`http://localhost:5000/bookings/${id}`, {
+    fetch(`https://car-doctor-server-one-gamma-38.vercel.app/bookings/${id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json'
@@ -91,7 +105,7 @@ const Bookings = () => {
   return (
      <>
      { 
-      bookings ? <NoData></NoData> :
+      bookings ?
       <div className="overflow-x-auto min-h-screen">
       <table className="table">
         {/* head */}
@@ -113,6 +127,7 @@ const Bookings = () => {
         </thead>
         <tbody>
           {
+            
             bookings.map(booking => <BookingRow
               key={booking._id}
               booking={booking}
@@ -124,7 +139,7 @@ const Bookings = () => {
 
 
       </table>
-    </div>
+    </div>: <NoData></NoData> 
     }
     
      
