@@ -44,14 +44,14 @@ import NoData from "../pages/Share/NoData/NoData";
         {
           path:'/services/:id',
           element: <PrivateRoute><BookService></BookService></PrivateRoute>,
-          loader: ({params})=> fetch(`https://car-doctor-server-one-gamma-38.vercel.app/services/${params.id}`)
+          loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
 
           
         },
         {
           path: '/cars/:id',
           element: <PrivateRoute><BookService></BookService></PrivateRoute>,
-          loader: ({params}) => fetch(`https://car-doctor-server-one-gamma-38.vercel.app/cars/${params.id}`)
+          loader: ({params}) => fetch(`http://localhost:5000/cars/${params.id}`)
 
         },
         {
@@ -82,7 +82,8 @@ import NoData from "../pages/Share/NoData/NoData";
         },
         {
           path: '/shop',
-          element: <Shop></Shop>
+          element: <Shop></Shop>,
+          loader: ()=> fetch('http://localhost:5000/productsCount')
         },
         {
           path:'/about',

@@ -11,7 +11,7 @@ const Blog = () => {
  
   useEffect(()=>{
 
-    axios.get('https://car-doctor-server-one-gamma-38.vercel.app/blogs')
+    axios.get('http://localhost:5000/blogs')
     .then(res => {
       setBlogPost(res.data);
     })

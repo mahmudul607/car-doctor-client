@@ -54,7 +54,7 @@ const axiosSecure = useAxiosSecure();
       if (result.isConfirmed) {
         Swal.fire("Delete!", "", "success");
 
-        fetch(`https://car-doctor-server-one-gamma-38.vercel.app/bookings/${id}`, {
+        fetch(`http://localhost:5000/bookings/${id}`, {
         method: 'DELETE',
       })
         .then(res => res.json())
@@ -82,7 +82,7 @@ const axiosSecure = useAxiosSecure();
   }
   const handleBookingUpdate = id => {
 
-    fetch(`https://car-doctor-server-one-gamma-38.vercel.app/bookings/${id}`, {
+    fetch(`http://localhost:5000/bookings/${id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json'

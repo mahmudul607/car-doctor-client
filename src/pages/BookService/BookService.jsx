@@ -50,7 +50,7 @@ const BookService = () => {
             if (result.isConfirmed) {
               Swal.fire("Confirmed!", "", "success");
 
-              axios.post('https://car-doctor-server-one-gamma-38.vercel.app/bookings', bookings)
+              axios.post('http://localhost:5000/bookings', bookings)
             .then(data =>{
                 console.log(data);
                 

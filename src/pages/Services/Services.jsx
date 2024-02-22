@@ -9,7 +9,7 @@ const Services = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        axios.get('https://car-doctor-server-one-gamma-38.vercel.app/services', { withCredentials: true })
+        axios.get('http://localhost:5000/services', { withCredentials: true })
             .then(res => {
                 setServices(res.data);
             })

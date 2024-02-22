@@ -7,3 +7,7 @@
 
 }
 
+.pagination .selected{
+    background-color: orange;
+    color: black;
+}

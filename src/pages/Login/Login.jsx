@@ -32,7 +32,7 @@ const Login = () => {
                 
                 navigate(location?.state?  location.state : '/' )
                 
-            // axios.post('https://car-doctor-server-one-gamma-38.vercel.app/jwt', user, {withCredentials: true})
+            // axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
             // .then(res => {
                 
             //     if(res.data.success){
